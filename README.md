@@ -1,5 +1,5 @@
-# IDS-IPS-Shorewall
-Secure your VPS with IDS/IPS
+# Shorewall
+Secure your VPS with Shorewall(Firewall for Linux)
 
 
 
