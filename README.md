@@ -1,9 +1,9 @@
 # Shorewall
-Secure your VPS with Shorewall(Firewall for Linux)
+# Secure your VPS with Shorewall(Firewall for Linux)
 
 
 
-First Install Shorewall 
+# First Install Shorewall 
 sudo apt-get install shorewall -y
 
 
@@ -20,7 +20,7 @@ save, and exit.
 
 
 
-Setting Shorewall
+# Setting Shorewall
 
 The program will not start unless you change the shorewall configuration file /etc/shorewall/shorewall.conf .
 You can do this in following way:
@@ -35,7 +35,7 @@ STARTUP_ENABLED=Yes
 Save and Exit
 
 
-Turning on Forwarding
+# Turning on Forwarding
 
 Finally we get to the last necessary file, /etc/shorewall/shorewall.conf. 
 This file manages global shorewall options, and you should read it through completely.
@@ -50,13 +50,13 @@ Save and Exit
 
 
 
-Checking Your Configs and Starting Shorewall
+# Checking Your Configs and Starting Shorewall
 shorewall check
 
-Starting Firewall
+# Starting Firewall
 systemctl start shorewall
 
-Enabling service of shorewall firewall
+# Enabling service of shorewall firewall
 systemctl enable shorewall
 
 For example you have eth0 as your network device (usualy)
@@ -70,7 +70,7 @@ net     eth0            detect          tcpflags,logmartians,nosmurfs
 Save and Exit
 
 
-Next create or edit sudo nano /etc/shorewall/policy 
+# Next create or edit sudo nano /etc/shorewall/policy 
 #add this lines
 
 #SOURCE		DEST		POLICY		LOG LEVEL	LIMIT:BURST
@@ -83,7 +83,7 @@ all             all             REJECT          info
 
 Save and Exit
 
-Next create or edit sudo nano /etc/shorewall/zones
+# Next create or edit sudo nano /etc/shorewall/zones
 #add this lines
 
 #ZONE   TYPE    OPTIONS                 IN                      OUT
@@ -94,7 +94,7 @@ net     ipv4
 Save and Exit
 
 
-Next create or edit sudo nano /etc/shorewall/rules 
+# Next create or edit sudo nano /etc/shorewall/rules 
 #add this lines
 
 #Forward all ssh and http connection requests from the internet to local system 192.168.1.123
@@ -108,13 +108,13 @@ Ping(DROP)      net               $FW
 Save and Exit
 
 
-Checking Your Configs and Starting Shorewall
+# Checking Your Configs and Starting Shorewall
 shorewall check
 
-ReStarting Firewall
+# ReStarting Firewall
 systemctl restart shorewall
 
-Enabling service of shorewall firewall
+#Enabling service of shorewall firewall
 systemctl enable shorewall
 
 
