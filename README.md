@@ -1,6 +1,7 @@
 # IDS-IPS-Shorewall
 Secure your VPS with IDS/IPS
-#################################
+
+
 
 First Install Shorewall 
 sudo apt-get install shorewall -y
@@ -14,7 +15,8 @@ to
 startup = 1
 
 save, and exit.
-#################################
+
+
 
 Setting Shorewall
 
@@ -28,7 +30,8 @@ to
 STARTUP_ENABLED=Yes
 
 Save and Exit
-#################################
+
+
 Turning on Forwarding
 
 Finally we get to the last necessary file, /etc/shorewall/shorewall.conf. This file manages global shorewall options, and you should read it through completely.
@@ -39,7 +42,8 @@ IP_FORWARDING=On
 
 Save and Exit
 
-#################################
+
+
 Checking Your Configs and Starting Shorewall
 shorewall check
 
@@ -49,7 +53,8 @@ systemctl start shorewall
 Enabling service of shorewall firewall
 systemctl enable shorewall
 
-#################################
+
+
 
 Newx we need to to this
 
@@ -71,7 +76,7 @@ Next create or edit sudo nano /etc/shorewall/policy
 fw              all             ACCEPT
 net             all             DROP            info
  
-# The FOLLOWING POLICY MUST BE LAST
+#The FOLLOWING POLICY MUST BE LAST
 all             all             REJECT          info
 #LAST LINE -- ADD YOUR ENTRIES ABOVE THIS LINE -- DO NOT REMOVE
 
