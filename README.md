@@ -114,7 +114,7 @@ shorewall check
 # ReStarting Firewall
 systemctl restart shorewall
 
-#Enabling service of shorewall firewall
+# Enabling service of shorewall firewall
 systemctl enable shorewall
 
 
